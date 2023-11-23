@@ -13,7 +13,8 @@ public class Log : Enemy
     // Start is called before the first frame update
     void Start()
     {
-        
+        state = EnemyState.idle;
+        rb = GetComponent<Rigidbody2D>();
         target = GameObject.FindWithTag("Player").transform;
         anim = gameObject.GetComponent<Animator>();
     }

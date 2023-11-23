@@ -12,7 +12,6 @@ public class FloatValue : ScriptableObject, ISerializationCallbackReceiver
 
     public void OnAfterDeserialize()
     {
-        Debug.Log(RuntimeValue);
         RuntimeValue = initialValue;
     }
     public void OnBeforeSerialize()

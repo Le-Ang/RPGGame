@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3144875820162945281}
   - component: {fileID: 6331075248840255507}
   - component: {fileID: 7173468405512040092}
+  - component: {fileID: 8690342998952035960}
   m_Layer: 0
   m_Name: sign
   m_TagString: Untagged
@@ -32,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3144875820162945281
 SpriteRenderer:
@@ -72,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -304249669
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -147960779, guid: bb9a6fa3ae4347e4686f32d68eb58b2d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -176,3 +177,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.2616682}
   m_EdgeRadius: 0
+--- !u!114 &8690342998952035960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202087008463065428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee88d9c64c0266a4884bf40912b60bbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contextOn: {fileID: 11400000, guid: 421af28672d7c7a4ca5304e79cddcb2b, type: 2}
+  contextOff: {fileID: 11400000, guid: 4c91adbc1b4fcd54c953f8df48f0570d, type: 2}
+  dialogBox: {fileID: 0}
+  dialogText: {fileID: 0}
+  dialog: Way to the Lake
+  playerInRange: 0

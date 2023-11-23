@@ -27,14 +27,16 @@ public class HeartManager : MonoBehaviour
 
     public void UpdateHearts()
     {
-        float tempHealth = playerCurrentHealth.initialValue / 2;
+        float tempHealth = playerCurrentHealth.RuntimeValue / 2;
         for(int i = 0; i< heartContainers.initialValue; i++)
         {
             if(i <= tempHealth-1)
             {
+                Debug.Log("Full Heart");
                 hearts[i].sprite = fullHeart;
-            }else if(i > tempHealth)
+            }else if(i >= tempHealth)
             {
+                Debug.Log("Empty Heart");
                 hearts[i].sprite = emptyHeart;
             }
             else

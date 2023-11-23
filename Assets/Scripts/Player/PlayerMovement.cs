@@ -7,9 +7,9 @@ public enum PlayerState {Idle, Moving, Attacking, Interract, Stagger}
 public class PlayerMovement : MonoBehaviour
 {
     public PlayerState currentState;
-    public float speed = 4f;
+    public float speed;
     private Rigidbody2D rb;
-    private Vector2 change;
+    private Vector3 change;
     private Animator animator;
     public FloatValue currentHealth;
     public SignalSender playerHealthSignal;
@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        change = Vector2.zero;
+        change = Vector3.zero;
         change.x = Input.GetAxis("Horizontal");
         change.y = Input.GetAxis("Vertical");
         if(Input.GetButtonDown("Attack") && currentState != PlayerState.Attacking 
@@ -54,26 +54,28 @@ public class PlayerMovement : MonoBehaviour
     }
     private void UpdateAnimationAndMove()
     {
-        if(change != Vector2.zero)
+        if(change != Vector3.zero)
         {
             animator.SetFloat("MoveX",change.x);
             animator.SetFloat("MoveY",change.y);
-            animator.SetFloat("Speed", change.sqrMagnitude);
+            animator.SetBool("Moving", true);
+        }
+        else
+        {
+            animator.SetBool("Moving", false) ;
         }
     }
     private void FixedUpdate()
     {
         change.Normalize();
-        rb.MovePosition(rb.position + change * speed * Time.fixedDeltaTime);
+        rb.MovePosition(transform.position + change * speed * Time.deltaTime);
     }
     public void Knock(float knockTime, float damage)
     {
-        Debug.Log(playerHealthSignal,currentHealth);
         currentHealth.RuntimeValue -= damage;
         playerHealthSignal.Raise();
         if (currentHealth.RuntimeValue > 0)
         {
-            
             StartCoroutine(KnockCo(knockTime));
         }
         else

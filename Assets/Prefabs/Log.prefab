@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3940746104939578069}
   - component: {fileID: 3943954472244672158}
   - component: {fileID: 4088550538513186288}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Log
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4202074892358197061
 SpriteRenderer:
@@ -170,7 +170,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04052031, y: -0.3970979}
+  m_Offset: {x: -0.011916876, y: -0.37069467}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -181,7 +181,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6871462, y: 0.49264896}
+  m_Size: {x: 0.6299393, y: 0.43984252}
   m_EdgeRadius: 0
 --- !u!114 &3940746104939578069
 MonoBehaviour:
