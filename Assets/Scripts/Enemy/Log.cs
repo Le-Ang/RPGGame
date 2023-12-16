@@ -17,15 +17,16 @@ public class Log : Enemy
         rb = GetComponent<Rigidbody2D>();
         target = GameObject.FindWithTag("Player").transform;
         anim = gameObject.GetComponent<Animator>();
+        anim.SetBool("WakeUp", true);
     }
 
     // Update is called once per frame
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         CheckDistance();
     }
 
-    private void CheckDistance()
+    public virtual void CheckDistance()
     {
         if(Vector3.Distance(target.position, transform.position) <= distanceView
             && Vector3.Distance(target.position, transform.position) > distanceAttack)
@@ -51,7 +52,7 @@ public class Log : Enemy
         anim.SetFloat("MoveX", setVector.x);
         anim.SetFloat("MoveY", setVector.y);
     }
-    private void changeAnim(Vector2 direction) 
+    public void changeAnim(Vector2 direction) 
     {
         if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
         {
