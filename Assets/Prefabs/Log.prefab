@@ -36,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4202074892358197061
 SpriteRenderer:
@@ -201,6 +201,7 @@ MonoBehaviour:
   enemyName: Log
   enemyDamage: 1
   moveSpeed: 1.5
+  deathEffect: {fileID: 3243780074797608722, guid: 83e4f7e97a188244f8404cf0d65d6075, type: 3}
   rb: {fileID: 8066804930532346404}
   target: {fileID: 0}
   distanceView: 3

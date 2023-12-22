@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public VectorValue startingPosition;
     public Inventory playerInventory;
     public SpriteRenderer receivedItemSprite;
+    public SignalSender playerHit;
 
     // Start is called before the first frame update
     private void Start()
@@ -112,12 +113,12 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            //this.gameObject.SetActive(false);
-            Debug.Log("PlayerDeath");
+            this.gameObject.SetActive(false);
         }
     }
     private IEnumerator KnockCo(float knockTime)
     {
+        playerHit.Raise();
         if (rb != null)
         {
             yield return new WaitForSeconds(knockTime);

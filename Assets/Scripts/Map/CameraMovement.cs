@@ -8,9 +8,12 @@ public class CameraMovement : MonoBehaviour
     public float smoothing = 0.6f;
     public Vector2 minPosition;
     public Vector2 maxPosition;
+
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         transform.position = new Vector3(target.position.x, target.position.y,
             transform.position.z);
     }
@@ -28,5 +31,17 @@ public class CameraMovement : MonoBehaviour
 
             transform.position = Vector3.Lerp(transform.position, targetPosition, smoothing);
         }
+    }
+
+    public void BeginKick()
+    {
+        anim.SetBool("kick_active", true);
+        StartCoroutine(Kickco());
+    }
+
+    public IEnumerator Kickco()
+    {
+        yield return null;
+        anim.SetBool("kick_active", false);
     }
 }
