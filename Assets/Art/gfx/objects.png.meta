@@ -1732,15 +1732,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_111
+      name: twitch up
       rect:
         serializedVersion: 2
         x: 0
         y: 160
-        width: 14
-        height: 17
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.41208968, y: 0.51758194}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1753,13 +1753,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_112
+      name: twich down
       rect:
         serializedVersion: 2
         x: 16
         y: 160
-        width: 14
-        height: 17
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2891,8 +2891,6 @@ TextureImporter:
       objects_109: -503096024
       objects_11: 102428966
       objects_110: 1655539656
-      objects_111: -314886530
-      objects_112: -1083117985
       objects_113: 186980595
       objects_114: -910627244
       objects_115: -577074964
@@ -3036,6 +3034,8 @@ TextureImporter:
       objects_97: -1066984007
       objects_98: -39393378
       objects_99: -1030547564
+      twich down: -1083117985
+      twitch up: -314886530
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

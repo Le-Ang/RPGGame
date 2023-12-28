@@ -5,10 +5,12 @@ using UnityEngine;
 public class Log : Enemy
 {
     public Rigidbody2D rb;
+    [Header("Target Variables")]
     public Transform target;
     public float distanceView;
     public float distanceAttack;
-    public Transform homePosition;
+
+    [Header("Animator")]
     public Animator anim;
     // Start is called before the first frame update
     void Start()
@@ -47,7 +49,7 @@ public class Log : Enemy
         }
     }
 
-    private void SetAnimFloat(Vector2 setVector)
+    public void SetAnimFloat(Vector2 setVector)
     {
         anim.SetFloat("MoveX", setVector.x);
         anim.SetFloat("MoveY", setVector.y);
@@ -75,7 +77,7 @@ public class Log : Enemy
             }
         }
     }
-    private void ChangeState(EnemyState newState)
+    public void ChangeState(EnemyState newState)
     {
         if(state != newState)
         {

@@ -322,7 +322,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.95, y: -1.99, z: -10}
+  m_LocalPosition: {x: 4.17, y: 1.33, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -345,6 +345,9 @@ MonoBehaviour:
   smoothing: 0.6
   minPosition: {x: -4.96, y: -1.99}
   maxPosition: {x: 4.96, y: 1.99}
+  anim: {fileID: 0}
+  camMin: {fileID: 11400000, guid: 8166ebcf0b7c3994093053f9953629a6, type: 2}
+  camMax: {fileID: 11400000, guid: 3cf5f3fa94b63764eb8c3c249152af6f, type: 2}
 --- !u!1 &555459728
 GameObject:
   m_ObjectHideFlags: 0
@@ -7581,6 +7584,14 @@ PrefabInstance:
       propertyPath: fadeWait
       value: 0.33
       objectReference: {fileID: 0}
+    - target: {fileID: 6124632159130243759, guid: a99446d244ad4ef4c831897c57b0c5aa, type: 3}
+      propertyPath: cameraMax
+      value: 
+      objectReference: {fileID: 11400000, guid: 013ce599cdfce5b4cb4f835922ef8da5, type: 2}
+    - target: {fileID: 6124632159130243759, guid: a99446d244ad4ef4c831897c57b0c5aa, type: 3}
+      propertyPath: cameraMin
+      value: 
+      objectReference: {fileID: 11400000, guid: 79db7c1ee71d76347a86723eb212d7e5, type: 2}
     - target: {fileID: 6124632159130243759, guid: a99446d244ad4ef4c831897c57b0c5aa, type: 3}
       propertyPath: fadeInPanel
       value: 

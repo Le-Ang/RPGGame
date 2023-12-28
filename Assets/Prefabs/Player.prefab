@@ -506,6 +506,7 @@ MonoBehaviour:
   startingPosition: {fileID: 11400000, guid: 1879f730e40a6e142adaf1356e14c247, type: 2}
   playerInventory: {fileID: 11400000, guid: 3d60174a91694414494d5dbcaeccce49, type: 2}
   receivedItemSprite: {fileID: 2631410451075847060}
+  playerHit: {fileID: 11400000, guid: 002a9dd27439ed14bb0f4947718f76e4, type: 2}
 --- !u!61 &3131400197318832122
 BoxCollider2D:
   m_ObjectHideFlags: 0

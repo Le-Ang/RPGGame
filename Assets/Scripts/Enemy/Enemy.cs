@@ -5,16 +5,24 @@ using UnityEngine;
 public enum EnemyState { idle, move, attack, stagger}
 public class Enemy : MonoBehaviour
 {
+    [Header("State Machine")]
     public EnemyState state;
+
+    [Header("Enemy Stats")]
     public FloatValue enemyMaxHealth;
     public float enemyHealth;
     public string enemyName;
     public int enemyDamage;
     public float moveSpeed;
+    public Vector2 homePosition;
+
+    [Header("Death Effects")]
     public GameObject deathEffect;
+    private float deathEffectDelay = 1f;
     private void Awake()
     {
         enemyHealth = enemyMaxHealth.initialValue;
+        transform.position = homePosition; 
     }
     private void TakeDamage(float damage)
     {
@@ -31,7 +39,7 @@ public class Enemy : MonoBehaviour
         if(deathEffect != null)
         {
             GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
-            Destroy(effect, 1f);
+            Destroy(effect, deathEffectDelay);
         }
     }
     public void Knock(Rigidbody2D rb, float knockTime, float damage)
