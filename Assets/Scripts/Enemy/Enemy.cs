@@ -19,10 +19,21 @@ public class Enemy : MonoBehaviour
     [Header("Death Effects")]
     public GameObject deathEffect;
     private float deathEffectDelay = 1f;
+    public LootTable thisLoot;
+
+    [Header("Death Signals")]
+    public SignalSender roomSignal;
     private void Awake()
     {
         enemyHealth = enemyMaxHealth.initialValue;
         transform.position = homePosition; 
+    }
+
+    private void OnEnable()
+    {
+        transform.position = homePosition;
+        enemyHealth = enemyMaxHealth.initialValue;
+        state = EnemyState.idle;
     }
     private void TakeDamage(float damage)
     {
@@ -30,7 +41,24 @@ public class Enemy : MonoBehaviour
         if(enemyHealth <= 0)
         {
             DeathEffect();
+            MakeLoot();
+            if(roomSignal != null)
+            {
+                roomSignal.Raise();
+            }
             this.gameObject.SetActive(false);
+        }
+    }
+
+    private void MakeLoot()
+    {
+        if(thisLoot != null)
+        {
+            Powerup current = thisLoot.LootPowerup();
+            if(current != null)
+            {
+                Instantiate(current.gameObject, transform.position, Quaternion.identity);
+            }
         }
     }
 
@@ -47,7 +75,7 @@ public class Enemy : MonoBehaviour
         StartCoroutine(KnockCo(rb, knockTime));
         TakeDamage(damage);
     }
-    private IEnumerator KnockCo(Rigidbody2D rb, float knockTime)
+    public IEnumerator KnockCo(Rigidbody2D rb, float knockTime)
     {
         if (rb != null)
         {

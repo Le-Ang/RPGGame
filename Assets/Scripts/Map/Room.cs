@@ -6,6 +6,7 @@ public class Room : MonoBehaviour
 {
     public Enemy[] enemies;
     public Pot[] pots;
+    public GameObject virtualCamera;
 
     public virtual void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,6 +21,7 @@ public class Room : MonoBehaviour
             {
                 ChangeActivation(pots[i], true);
             }
+            virtualCamera.SetActive(true);
         }
     }
     public virtual void OnTriggerExit2D(Collider2D collision)
@@ -35,10 +37,11 @@ public class Room : MonoBehaviour
             {
                 ChangeActivation(pots[i], false);
             }
+            virtualCamera.SetActive(false);
         }
     }
 
-    void ChangeActivation(Component component, bool activation)
+    public void ChangeActivation(Component component, bool activation)
     {
         component.gameObject.SetActive(activation);
     }

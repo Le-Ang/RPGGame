@@ -18,7 +18,7 @@ public class Door : Interactable
     // Update is called once per frame
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetButtonDown("Attack"))
         {
             if (playerInRange && doorType == DoorType.key)
             {
@@ -42,5 +42,14 @@ public class Door : Interactable
         open = true;
         //turn off the door's box collider
         physicsCollider.enabled = false;
+    }
+    public void Close()
+    {
+        //Turn off the door's sprite renderer
+        doorSprite.enabled = true;
+        //Set open to true
+        open = false;
+        //turn off the door's box collider
+        physicsCollider.enabled = true;
     }
 }
