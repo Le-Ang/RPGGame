@@ -38,7 +38,7 @@ Transform:
   - {fileID: 1418281860730272976}
   - {fileID: 8986044726555968739}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &7058370891100036511
 PolygonCollider2D:
@@ -109,7 +109,7 @@ MonoBehaviour:
   - {fileID: 5583251787107259379}
   - {fileID: 3033203886794685092}
   - {fileID: 5183435325154690680}
-  virtualCamera: {fileID: 0}
+  virtualCamera: {fileID: 5339154776861544923}
 --- !u!1 &5339154776861544923
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,6 +120,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8986044726555968739}
   - component: {fileID: 2256951541333893120}
+  - component: {fileID: 6276273751992452938}
+  - component: {fileID: 3371610097193107112}
   m_Layer: 0
   m_Name: Virtual Camera Room 1
   m_TagString: Untagged
@@ -135,7 +137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5339154776861544923}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.5, y: 1.5, z: -35.355904}
+  m_LocalPosition: {x: -6.488, y: 5.753, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -165,7 +167,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 17.677952
+    OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -182,6 +184,46 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 8202668532877426568}
+--- !u!114 &6276273751992452938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5339154776861544923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2fba25a5cd15594e8f050a11e386c80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ConfineMode: 0
+  m_BoundingVolume: {fileID: 0}
+  m_BoundingShape2D: {fileID: 7058370891100036511}
+  m_ConfineScreenEdges: 1
+  m_Damping: 0
+--- !u!114 &3371610097193107112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5339154776861544923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ApplyAfter: 2
+  m_ChannelMask: 1
+  m_Gain: 1
+  m_Use2DDistance: 0
+  m_UseCameraSpace: 1
+  m_ReactionSettings:
+    m_SecondaryNoise: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_Duration: 1
+    m_NoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &5391941588033274091
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,8 +282,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
-  m_LookaheadTime: 0
-  m_LookaheadSmoothing: 0
+  m_LookaheadTime: 0.4
+  m_LookaheadSmoothing: 17
   m_LookaheadIgnoreY: 0
   m_XDamping: 1
   m_YDamping: 1
@@ -250,8 +292,8 @@ MonoBehaviour:
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_CameraDistance: 10
-  m_DeadZoneWidth: 0
-  m_DeadZoneHeight: 0
+  m_DeadZoneWidth: 0.5
+  m_DeadZoneHeight: 0.5
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
   m_SoftZoneWidth: 0.8
@@ -510,6 +552,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 8481763531786830609}
     m_Modifications:
     - target: {fileID: 3940746104939578069, guid: 773eeee18f4f77343a49f32db873acd6, type: 3}
+      propertyPath: thisLoot
+      value: 
+      objectReference: {fileID: 11400000, guid: bb7be94d0bc070649be031961762f4ba, type: 2}
+    - target: {fileID: 3940746104939578069, guid: 773eeee18f4f77343a49f32db873acd6, type: 3}
+      propertyPath: roomSignal
+      value: 
+      objectReference: {fileID: 11400000, guid: 1eb5dd385268035428407cd787f1fcc7, type: 2}
+    - target: {fileID: 3940746104939578069, guid: 773eeee18f4f77343a49f32db873acd6, type: 3}
       propertyPath: homePosition.x
       value: 6
       objectReference: {fileID: 0}
@@ -595,6 +645,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 8481763531786830609}
     m_Modifications:
     - target: {fileID: 3940746104939578069, guid: 773eeee18f4f77343a49f32db873acd6, type: 3}
+      propertyPath: thisLoot
+      value: 
+      objectReference: {fileID: 11400000, guid: bb7be94d0bc070649be031961762f4ba, type: 2}
+    - target: {fileID: 3940746104939578069, guid: 773eeee18f4f77343a49f32db873acd6, type: 3}
+      propertyPath: roomSignal
+      value: 
+      objectReference: {fileID: 11400000, guid: 1eb5dd385268035428407cd787f1fcc7, type: 2}
+    - target: {fileID: 3940746104939578069, guid: 773eeee18f4f77343a49f32db873acd6, type: 3}
       propertyPath: homePosition.x
       value: 4
       objectReference: {fileID: 0}
@@ -652,7 +710,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8066804930532346404, guid: 773eeee18f4f77343a49f32db873acd6, type: 3}
       propertyPath: m_SleepingMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
