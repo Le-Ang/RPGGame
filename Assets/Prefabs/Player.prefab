@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1486508290537313428}
   - component: {fileID: 2631410451075847060}
   - component: {fileID: 1695495143993573193}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Receive Item
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 1837356915192358872}
   - component: {fileID: 2830775359176456053}
   - component: {fileID: 1557500937083697896}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HitBoxUp
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2847545996391843858}
   - component: {fileID: 3828479066701045594}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Context Clue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +314,8 @@ GameObject:
   - component: {fileID: 3131400197318832122}
   - component: {fileID: 6030888223108991377}
   - component: {fileID: 4504322320910532800}
-  m_Layer: 0
+  - component: {fileID: 3632773404454861848}
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -463,8 +464,8 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 0
-  m_CollisionDetection: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!95 &853246403524502317
 Animator:
@@ -507,6 +508,9 @@ MonoBehaviour:
   playerInventory: {fileID: 11400000, guid: 3d60174a91694414494d5dbcaeccce49, type: 2}
   receivedItemSprite: {fileID: 2631410451075847060}
   playerHit: {fileID: 11400000, guid: 002a9dd27439ed14bb0f4947718f76e4, type: 2}
+  reduceMagic: {fileID: 11400000, guid: d087d9056fc332848a2ff8a75c299366, type: 2}
+  projectile: {fileID: 1450419127463437115, guid: aebe3a7626ebda24fbda56a7e2d8f3fe, type: 3}
+  bow: {fileID: 11400000, guid: 047ffe5071fecab44b33e5f1b8462080, type: 2}
 --- !u!61 &3131400197318832122
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -594,6 +598,66 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3632773404454861848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6942686158840688280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd438dd108a0f284aa931a2da434f1d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 2
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.2
+    m_ImpulseType: 0
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0, y: -1, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  m_IgnoreTag: 
+  m_UseImpactDirection: 0
+  m_ScaleImpactWithMass: 0
+  m_ScaleImpactWithSpeed: 0
 --- !u!1 &7727188011009302140
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,7 +670,7 @@ GameObject:
   - component: {fileID: 506451935811343867}
   - component: {fileID: 7624518786149559564}
   - component: {fileID: 7803931669922502024}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HitBoxLeft
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -717,7 +781,7 @@ GameObject:
   - component: {fileID: 5215370910909532532}
   - component: {fileID: 7482420936577223729}
   - component: {fileID: 5421564242924505355}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HitBoxDown
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -820,7 +884,7 @@ GameObject:
   - component: {fileID: 757398229615479992}
   - component: {fileID: 1292631816484503819}
   - component: {fileID: 5162182587176877008}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HitBoxRight
   m_TagString: Player
   m_Icon: {fileID: 0}
