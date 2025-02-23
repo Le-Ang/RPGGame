@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 845ed94ccbaa7424d9f0a6b7730233b6, type: 3}
+  m_Name: BouncyBall
+  m_EditorClassIdentifier: 
+  magicCost: 2
+  duration: 0.3
+  playerMagic: {fileID: 11400000, guid: 16c318995e555bf4ea24a2b8262c4c9f, type: 2}
+  usePlayerMagic: {fileID: 11400000, guid: 88377a244cc207a49a223ce49cb3f277, type: 2}
+  thisProjectile: {fileID: 7974941446458960230, guid: 2176df0cb3724584da09ff6eab6e97bd, type: 3}
+  numberOfProjectiles: 5
+  projectileSpread: 80
